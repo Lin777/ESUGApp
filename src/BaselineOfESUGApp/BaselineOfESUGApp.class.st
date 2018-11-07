@@ -10,7 +10,8 @@ BaselineOfESUGApp >> baseline: spec [
 	spec
 		for: #common
 		do: [ self setUpDependencies: spec.
-			spec
+			spec package: 'ESUGApp-Example' with: [ spec requires: #('Parasol') ];
+			package: 'ESUGApp-Test' with: [ spec requires: #('Parasol') ]
 				 ].
 ]
 
